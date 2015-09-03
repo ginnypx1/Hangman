@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block title %}HangMonkey{% endblock %}
+
+{% block content %}
+<h1>HangMonkey</h1>
+
+<img src="{% static 'img/Hangman6-big.jpg' %}" alt="picture of a sockmonkey hanging from the gallows" />
+
+<div id="intro">
+	<p>This monkey hasn't been <strong>that</strong> bad...</p>
+	<p>Does he really deserve to die?</p>
+</div>
+
+<div id="start-button">
+	<a href="{% url 'hangmonkeygame:game' %}">Let's Play!</a>
+</div>
+{% endblock %}
