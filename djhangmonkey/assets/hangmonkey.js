@@ -95,7 +95,7 @@ $("#choose").click(function () {
 		if (strikes == 6) {
 			// display loss message
 			$("#strikes").text("You lose. Monkey dies.");
-			$("#missed-letters").text("The word was " + secretWord);
+			$("#missed-letters").text("The word was " + secretWord + ".");
 			var lossPic = monkeyPics[5];
 			$("img").attr("src", lossPic);
 			$("#choose").hide();
