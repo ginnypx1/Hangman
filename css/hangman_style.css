@@ -27,7 +27,10 @@ footer {
 /*COLORS___________________*/
 
 /*SPACING___________________*/
-
+.gallows,
+.game-window {
+    min-height: 700px;
+}
 /*ICONS___________________*/
 @font-face {
     font-family: 'icomoon';

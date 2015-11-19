@@ -23,39 +23,41 @@
     </nav>
 
     <div id="wrapper">
-        <div id="game-dirs">
-            <p>I have a secret word in mind.</p>
-            <p>Can you guess it before the monkey dies?</p>
+        <div class="col-md-4 gallows">
+            <div id="monkey-pics">
+                <script>
+                    var IMG_FILE1 = "img/Hangman1-big.jpg"
+                    var IMG_FILE2 = "img/Hangman2-big.jpg"
+                    var IMG_FILE3 = "img/Hangman3-big.jpg"
+                    var IMG_FILE4 = "img/Hangman4-big.jpg"
+                    var IMG_FILE5 = "img/Hangman5-big.jpg"
+                    var IMG_FILE6 = "img/Hangman6-big.jpg"
+                </script>
+                <img class="img-responsive center-block" src="img/Hangman0-big.jpg" alt="Empty gallows" />
+            </div>
+            <button id="play-again" class="btn btn-default btn-lg btn-block">Play Again</button>
         </div>
 
-        <div id="word-display">
-            <p>Secret Word</p>
-        </div>
-
-        <div id="monkey-pics">
-            <script>
-                var IMG_FILE1 = "img/Hangman1-big.jpg"
-                var IMG_FILE2 = "img/Hangman2-big.jpg"
-                var IMG_FILE3 = "img/Hangman3-big.jpg"
-                var IMG_FILE4 = "img/Hangman4-big.jpg"
-                var IMG_FILE5 = "img/Hangman5-big.jpg"
-                var IMG_FILE6 = "img/Hangman6-big.jpg"
-            </script>
-            <img src="img/Hangman0-big.jpg" alt="Empty gallows" />
-        </div>
-
-        <div id="hint">
-            <p id="strikes"> </p>
-            <p id="missed-letters"> </p>
-        </div>
-
-        <form>
-            <input id="guess" type="text" />
-        </form>
-
-        <button id="choose">Pick a Letter</button>
-        <a id="play-again">Play Again</a>
-
+        <div class="col-md-8 game-window">
+            <div id="game-dirs">
+                <p>I have a secret word in mind.</p>
+                <p>Can you guess it before the monkey dies?</p>
+            </div>
+            <div id="word-display">
+                <p>Secret Word</p>
+            </div>
+            <div id="hint">
+                <p id="strikes"> </p>
+                <p id="missed-letters"> </p>
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="guess">Pick a Letter:</label>
+                    <input id="guess" class="form-control" type="text" />
+                </div>
+            </form>
+            <button id="choose" class="btn btn-success">Choose</button>
+        </div>  
     </div>
 
     <footer>

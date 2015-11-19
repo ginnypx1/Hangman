@@ -58,6 +58,8 @@ $("#word-display").text(startWord);
 
 // PLAY THE GAME WHEN CLICK "PICK A LETTER" BUTTON
 $("#choose").click(function () {
+    // disappear game directions
+    $("#game-dirs").hide();
     // grab input value
     var myGuess = $('input:text').val();
     myGuess = myGuess.toLowerCase();
