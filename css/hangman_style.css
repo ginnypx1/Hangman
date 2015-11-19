@@ -20,16 +20,103 @@ ul li {
     margin-bottom: 0px;
 }
 /*FONTS___________________*/
+.game-window,
+#hint {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
 footer {
     text-align: center;
 }
-
+#game-dirs,
+.navbar-brand {
+    font-family: 'Just Me Again Down Here', cursive;
+}
+#game-dirs {
+    font-size: 3em;
+}
+h1 {
+    font-size: 2.5em;
+}
+.navbar-brand {
+    font-size: 2.25em;
+}
+#choose,
+footer,
+.gallows,
+label,
+#play-again,
+.navbar-right,
+#word-display {
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 1px;
+}
+#choose,
+h2,
+#hint,
+label,
+#play-again {
+    font-size: 1.5em;
+}
+.secondary {
+    font-size: 1.25em;
+}
+#word-display{
+    font-size: 3em;
+    letter-spacing: 5px;
+}
 /*COLORS___________________*/
-
+a:link,
+a:visited,
+footer {
+    color: #bf8040; /* brown */
+}
+a:hover,
+a:focus {
+    color: #e65c00; /* orange */
+}
+.navbar-header a:link,
+.navbar-header a:visited,
+#game-dirs,
+h1,
+strong {
+    color: #800000; /* marroon */
+}
+.gallows {
+    background-image: url('../img/sprinkles_@2x.png');
+}
 /*SPACING___________________*/
+#choose,
+#play-again {
+    width: 90%;
+}
+#hint,
+form,
+#choose,
+#play-again {
+    margin-top: 2.5%;
+}
 .gallows,
 .game-window {
     min-height: 700px;
+    padding-top: 2%;
+}
+.game-window {
+    padding-left: 2.5%;
+}
+h1,
+h2 {
+    padding-bottom: 5px;
+}
+input {
+    margin-left: 5px;
+}
+.secondary {
+    padding-top: 0.5%;
+}
+#word-display {
+    padding: 10px 0px;
 }
 /*ICONS___________________*/
 @font-face {

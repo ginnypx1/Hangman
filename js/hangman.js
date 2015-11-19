@@ -83,6 +83,8 @@ $("#choose").click(function () {
             $("#strikes").text("You win! Monkey lives!");
             $("#missed-letters").text("Monkey is SO happy.");
             $("#choose").hide();
+            $("form").hide();
+            $("#play-again").show();
         } else {
             $("#word-display").text(newWord);
             // change the display of strikes
@@ -101,6 +103,8 @@ $("#choose").click(function () {
             var lossPic = monkeyPics[5];
             $("img").attr("src", lossPic);
             $("#choose").hide();
+            $("form").hide();
+            $("#play-again").show();
         } else {
             // add myGuess to missedLetters
             missedLetters.push(myGuess);
