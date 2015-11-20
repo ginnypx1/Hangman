@@ -4,6 +4,17 @@
 	/*body {
 		background-color: red;
 	}*/
+	.gallows {
+		height: 400px;
+	}
+
+	#game-dirs,
+	#word-display {
+		font-size: 2.5em;
+	}
+	#hint {
+		padding: 15px;
+	}
 }
 
 /*iPHONES6 to GALAXY*/
@@ -11,13 +22,30 @@
 	/*body {
 		background-color: orange;
 	}*/
+	.gallows {
+		height: 450px;
+	}
+	
+	#game-dirs,
+	#word-display {
+		font-size: 2.5em;
+	}
+	#hint {
+		padding: 15px;
+	}
 }
 
 /*TABLETS*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
 	/*body {
 		background-color: yellow;
 	}*/
+	.gallows {
+		height: 450px;
+	}
+	#hint {
+		padding: 15px;
+	}
 }
 
 /*PRINT*/
