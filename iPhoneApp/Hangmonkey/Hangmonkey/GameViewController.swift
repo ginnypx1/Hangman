@@ -10,34 +10,33 @@ import UIKit
 
 var winOrLose = 0
 
-var secretWord = ""
-var missedLetters = [""]
-var correctLetters = [""]
-var count = 0
+var secretWord: String = ""
+var secretWordArray = [Character]()
+var wordArray = [Character]()
+var missedLetters = [String]()
+var correctLetters = [String]()
+var count: Int = 0
 
 func pickSecretWord() {
     // chooses a secret word to start the game
-    // get a random number between 0 and gameWords length
-    // extract that word from gameWords and set as secretWord
+    let randomNumber = Int(arc4random_uniform(UInt32(gameWords.count)))
+    secretWord = gameWords[randomNumber]
 }
 
 class GameViewController: UIViewController {
 
     @IBOutlet weak var lblGameWord: UILabel!
     @IBOutlet weak var lblGuessedLetters: UILabel!
-    
     @IBOutlet weak var txtGuess: UITextField!
-    
     @IBOutlet weak var imgNoose: UIImageView!
+    
+    // MARK: - Apple functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Choose a secret word
-        // Set the count to zero
-        // empty correct letters
-        // empty missed letters
-        // display the word in lblGameWord as all blanks
+        
+        setUpGame()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +44,9 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtGuess.resignFirstResponder()
+    }
 
     /*
     // MARK: - Navigation
@@ -56,39 +58,92 @@ class GameViewController: UIViewController {
     }
     */
     
-    func displayWord() {
-        // displays the secret word with the hidden/guessed letters revealed
-        // replace every letter in the secretWord with a _
-        // for each letter in range of secretWord length
-        // if secretWord letter is in correctLetters
-        // replace the blank with the actual letter
+    func setUpGame() {
+        // Choose a secret word
+        pickSecretWord()
+        print(secretWord)
+        for character in secretWord.characters {
+            secretWordArray.append(character)
+        }
+        // Set the count to zero
+        count = 0
+        // empty arrays
+        correctLetters.removeAll(keepingCapacity: true)
+        wordArray.removeAll(keepingCapacity: true)
+        missedLetters.removeAll(keepingCapacity: true)
+        // display the secretWord as blanks
+        lblGameWord.text = displayWord()
+        lblGameWord.addTextSpacing(spacing: 1.5)
+        
     }
     
-    func counter() -> Int {
-        // keeps track of the number of guesses
-        count += 1
-        return count
+    func displayWord() -> String {
+        // displays the secret word with the hidden/guessed letters revealed
+        wordArray.removeAll(keepingCapacity: true)
+        for character in secretWord.characters {
+            if correctLetters.contains(String(character)) {
+                wordArray.append(character)
+            } else {
+                wordArray.append("_")
+            }
+        }
+        let wordString = String(wordArray)
+        return wordString
     }
 
+
     @IBAction func btnPlayTurnACTION(_ sender: AnyObject) {
-        // if guessedLetter is in the secretWord
-            // add the letter to correctLetters
-            // change the secretWord display
-        
-            // check to see if the word has been solved:
-            // winOrLose = 1
-            // for eachLetter in secretWord
-                // if the letter is not in correctLetters
-                // winOrLose = 0
-            // if winOrLose still == 1
-                // segue to EndGameViewController (winOrLose = 1)
-        // else
-            // increase the strike count
-            // if count == 6
-                // segue to EndGameViewController (winOrLose = 0)
-            // else
-                // add the guessedLetter to missedLetters
-                // change the picture to the next image
-                // add the guessedLetter to lblGuessedLetters
+        // TODO: Error handling (if nothing in text field or more than one character)
+        if let guessedLetter = txtGuess.text {
+            // if guessedLetter is in the secretWord
+            if secretWordArray.contains(Character(guessedLetter)) {
+                // add the letter to correctLetters
+                correctLetters.append(guessedLetter)
+                // change the secretWord display
+                lblGameWord.text = displayWord()
+                lblGameWord.addTextSpacing(spacing: 1.5)
+                // check to see if game has been won
+                winOrLose = 1
+                for character in secretWord.characters {
+                    if (correctLetters.contains(String(character))) == false {
+                        winOrLose = 0
+                    }
+                }
+                if winOrLose == 1 {
+                    // TODO: segue to EndGameViewController
+                    // let endView = EndGameViewController()
+                    // self.present(endView, animated: true, completion: nil)
+                    print("You Win!")
+                }
+            } else {
+                // increase the count
+                count += 1
+                // end game if count = 6
+                if count == 6 {
+                    // TODO: segue to EndGameViewController
+                    // let endView = EndGameViewController()
+                    // self.present(endView, animated: true, completion: nil)
+                    print("You lose!")
+                } else {
+                    // add guessedLetter to missedLetters
+                    missedLetters.append(guessedLetter)
+                    // change the picture to the next image
+                    let imageNum = gamePics[count]
+                    imgNoose.image = UIImage(named: imageNum)
+                    // add the guessed Letter to lblGuessedLetters
+                    let letterString = String(describing: missedLetters)
+                    lblGuessedLetters.text = letterString
+                }
+            }
+        }
+    }
+}
+
+// allows character spacing
+extension UILabel{
+    func addTextSpacing(spacing: CGFloat){
+        let attributedString = NSMutableAttributedString(string: self.text!)
+        attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSRange(location: 0, length: self.text!.characters.count))
+        self.attributedText = attributedString
     }
 }

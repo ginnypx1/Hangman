@@ -92,7 +92,7 @@
                                     <constraint firstAttribute="width" constant="130" id="Gei-4J-7Tm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lG4-Hg-0DK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lG4-Hg-0DK">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="c3h-ii-NT1"/>
                                     <constraint firstAttribute="width" constant="240" id="sLn-tI-DnN"/>
@@ -124,7 +124,7 @@
                                     <action selector="btnPlayTurnACTION:" destination="Xfb-Rt-aPN" eventType="touchUpInside" id="lOJ-hc-sQB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a e g" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ph-ba-JYo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ph-ba-JYo">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ewN-3J-HGv"/>
                                     <constraint firstAttribute="width" constant="240" id="heo-Gc-8Zi"/>
@@ -201,7 +201,7 @@
                                     <constraint firstAttribute="height" constant="130" id="qiE-L1-nuv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-qL-1Zx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You lose!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-qL-1Zx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="VFC-SO-eTT"/>
                                     <constraint firstAttribute="width" constant="240" id="md3-YF-WpQ"/>
@@ -210,7 +210,7 @@
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monkey is saved. At least, for now...." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-bp-9PH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monkey is dead. Oh, the humanity!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-bp-9PH">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="111" id="UYG-kM-Vk2"/>
                                     <constraint firstAttribute="width" constant="240" id="pXP-fn-z3N"/>
@@ -248,6 +248,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgMonkeyPic" destination="Mgg-nD-a5e" id="Hcx-iL-qqr"/>
                         <outlet property="lblWinStory" destination="Fd5-bp-9PH" id="lrS-j6-oly"/>
                         <outlet property="lblWinText" destination="9Mv-qL-1Zx" id="iRH-Jf-SLA"/>
                     </connections>

@@ -8,32 +8,32 @@
 
 import UIKit
 
-let winText = "You Win!"
-let lossText = "You Lose!"
-let winStory = "Monkey is saved. At least, for now..."
-let lossStory = "Monkey is dead. How could you? Oh, the humanity!"
-
 class EndGameViewController: UIViewController {
 
     @IBOutlet weak var lblWinText: UILabel!
     @IBOutlet weak var lblWinStory: UILabel!
+    @IBOutlet weak var imgMonkeyPic: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        /*
         // change text for win or loss state
         if winOrLose == 0 {
             // loss
-            lblWinText.text = lossText
-            lblWinStory.text = lossStory
+            lblWinText.text = "You Lose!"
+            lblWinStory.text = "Monkey is dead. How could you? Oh, the humanity!"
+            imgMonkeyPic.image = UIImage(named: "Hangman6")
         } else {
             // win
-            lblWinText.text = winText
-            lblWinStory.text = winStory
-        }
+            lblWinText.text = "You Win!"
+            lblWinStory.text = "Monkey is saved. At least, for now..."
+            imgMonkeyPic.image = UIImage(named: "Hangman0")
+        } */
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
