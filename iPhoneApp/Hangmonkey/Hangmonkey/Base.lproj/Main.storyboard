@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hangmonkey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman6" translatesAutoresizingMaskIntoConstraints="NO" id="HTY-vt-tp9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="8mk-BP-3ed"/>
+                                    <constraint firstAttribute="width" constant="130" id="pSb-cM-N7T"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangmonkey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWA-Dy-IUn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="B7t-kd-z7j"/>
+                                    <constraint firstAttribute="width" constant="240" id="aAq-xP-4xT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="38"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHj-dO-tQF">
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.9366648706896552" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jPb-eR-3EK"/>
+                                    <constraint firstAttribute="width" constant="240" id="nd2-OJ-9jx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Xfb-Rt-aPN" kind="show" id="zov-Yp-bBG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have a secret word in mind. Can you guess it before the monkey dies?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-ZS-zUx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="1PC-oH-JQX"/>
+                                    <constraint firstAttribute="width" constant="240" id="WXz-Gd-g6b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98251201923076925" green="0.98251201923076925" blue="0.98251201923076925" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aWA-Dy-IUn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="7a5-7C-PsM"/>
+                            <constraint firstItem="q5e-ZS-zUx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bcc-Up-1F6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YHj-dO-tQF" secondAttribute="bottom" constant="20" id="buW-EV-jeq"/>
+                            <constraint firstItem="HTY-vt-tp9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxb-LK-CtE"/>
+                            <constraint firstItem="q5e-ZS-zUx" firstAttribute="top" secondItem="HTY-vt-tp9" secondAttribute="bottom" constant="8" id="nDh-2O-2d1"/>
+                            <constraint firstItem="YHj-dO-tQF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nlS-SV-jBt"/>
+                            <constraint firstItem="HTY-vt-tp9" firstAttribute="top" secondItem="aWA-Dy-IUn" secondAttribute="bottom" constant="8" id="sbT-uY-Zgc"/>
+                            <constraint firstItem="aWA-Dy-IUn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uoh-V5-Trw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="gUk-OJ-Rt8">
+            <objects>
+                <viewController id="Xfb-Rt-aPN" customClass="GameViewController" customModule="Hangmonkey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZUr-Yj-gnh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xhe-vT-Z7p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wcl-JK-9a2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="ewq-0n-LCe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="67i-U2-WhF"/>
+                                    <constraint firstAttribute="width" constant="130" id="Gei-4J-7Tm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lG4-Hg-0DK">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="c3h-ii-NT1"/>
+                                    <constraint firstAttribute="width" constant="240" id="sLn-tI-DnN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="38"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Guessed:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PL-0D-Mja">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="K5v-rf-s6k"/>
+                                    <constraint firstAttribute="width" constant="240" id="gCs-bf-4Tz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="16"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-3e-jzQ">
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="c3H-g8-1Pl"/>
+                                    <constraint firstAttribute="width" constant="240" id="teH-JB-t8G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Choose">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPlayTurnACTION:" destination="Xfb-Rt-aPN" eventType="touchUpInside" id="lOJ-hc-sQB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a e g" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ph-ba-JYo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ewN-3J-HGv"/>
+                                    <constraint firstAttribute="width" constant="240" id="heo-Gc-8Zi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="16"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Letter:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RB4-IX-VeZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1tx-lt-Z30"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="Zwc-hD-98F"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="kh0-iA-acs"/>
+                                    <constraint firstAttribute="width" constant="240" id="we3-P7-JaM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abcdefghijklmnopqrstuvwxyz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JK6-So-FLi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3XG-G3-seA"/>
+                                    <constraint firstAttribute="height" constant="30" id="DPo-be-Mon"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97491987179487183" green="0.97491987179487183" blue="0.97491987179487183" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lG4-Hg-0DK" firstAttribute="top" secondItem="ZUr-Yj-gnh" secondAttribute="bottom" constant="38" id="Fyc-vV-KRI"/>
+                            <constraint firstItem="3Ph-ba-JYo" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="GRp-9v-j1A"/>
+                            <constraint firstItem="lG4-Hg-0DK" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="GeK-Ue-qAw"/>
+                            <constraint firstItem="OO7-3e-jzQ" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="HUD-JU-GM9"/>
+                            <constraint firstItem="JK6-So-FLi" firstAttribute="top" secondItem="RB4-IX-VeZ" secondAttribute="bottom" constant="8" id="KPH-dk-OQv"/>
+                            <constraint firstItem="RB4-IX-VeZ" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="LBb-Ye-LGB"/>
+                            <constraint firstItem="ewq-0n-LCe" firstAttribute="top" secondItem="lG4-Hg-0DK" secondAttribute="bottom" constant="8" id="LZM-pv-Zg5"/>
+                            <constraint firstItem="JK6-So-FLi" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="QvF-fi-4Nj"/>
+                            <constraint firstItem="3Ph-ba-JYo" firstAttribute="top" secondItem="0PL-0D-Mja" secondAttribute="bottom" id="Sh5-t1-EJq"/>
+                            <constraint firstItem="0PL-0D-Mja" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="TQD-Px-VqP"/>
+                            <constraint firstItem="RB4-IX-VeZ" firstAttribute="top" secondItem="3Ph-ba-JYo" secondAttribute="bottom" constant="44" id="Xlp-2W-gjb"/>
+                            <constraint firstItem="ewq-0n-LCe" firstAttribute="centerX" secondItem="Wcl-JK-9a2" secondAttribute="centerX" id="aPI-tw-ZLe"/>
+                            <constraint firstItem="Xhe-vT-Z7p" firstAttribute="top" secondItem="OO7-3e-jzQ" secondAttribute="bottom" constant="20" id="hQs-Ck-OvL"/>
+                            <constraint firstItem="0PL-0D-Mja" firstAttribute="top" secondItem="ewq-0n-LCe" secondAttribute="bottom" constant="8" id="yno-O6-B0D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgNoose" destination="ewq-0n-LCe" id="4Gw-AD-5Q1"/>
+                        <outlet property="lblGameWord" destination="lG4-Hg-0DK" id="mpY-Aq-bFr"/>
+                        <outlet property="lblGuessedLetters" destination="3Ph-ba-JYo" id="fvL-g2-I97"/>
+                        <outlet property="txtGuess" destination="JK6-So-FLi" id="yrn-FP-hdn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGs-Sn-VmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="137.32394366197184"/>
+        </scene>
+        <!--End Game View Controller-->
+        <scene sceneID="mgs-Zc-72y">
+            <objects>
+                <viewController id="kv1-RC-mQL" customClass="EndGameViewController" customModule="Hangmonkey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fdT-IN-T5Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="hdr-sP-0MW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fN6-dh-7vC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman6" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-nD-a5e">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="L8a-ac-4qM"/>
+                                    <constraint firstAttribute="height" constant="130" id="qiE-L1-nuv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-qL-1Zx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="VFC-SO-eTT"/>
+                                    <constraint firstAttribute="width" constant="240" id="md3-YF-WpQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="38"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monkey is saved. At least, for now...." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-bp-9PH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="UYG-kM-Vk2"/>
+                                    <constraint firstAttribute="width" constant="240" id="pXP-fn-z3N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aE-NZ-e5P">
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0hK-yf-4Tj"/>
+                                    <constraint firstAttribute="width" constant="240" id="vDM-6e-BIV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPlayAgainACTION:" destination="kv1-RC-mQL" eventType="touchUpInside" id="dUN-62-BzM"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="vH8-0J-PzW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97435897435897434" green="0.97435897435897434" blue="0.97435897435897434" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Mv-qL-1Zx" firstAttribute="centerX" secondItem="fN6-dh-7vC" secondAttribute="centerX" id="5YM-v2-fVm"/>
+                            <constraint firstItem="hdr-sP-0MW" firstAttribute="top" secondItem="1aE-NZ-e5P" secondAttribute="bottom" constant="20" id="A2D-Bd-m2o"/>
+                            <constraint firstItem="1aE-NZ-e5P" firstAttribute="centerX" secondItem="fN6-dh-7vC" secondAttribute="centerX" id="V6b-jU-263"/>
+                            <constraint firstItem="Mgg-nD-a5e" firstAttribute="top" secondItem="9Mv-qL-1Zx" secondAttribute="bottom" constant="8" id="YEK-IU-Wt2"/>
+                            <constraint firstItem="Mgg-nD-a5e" firstAttribute="centerX" secondItem="fN6-dh-7vC" secondAttribute="centerX" id="h5j-aB-fMe"/>
+                            <constraint firstItem="9Mv-qL-1Zx" firstAttribute="top" secondItem="fdT-IN-T5Q" secondAttribute="bottom" constant="38" id="hGh-b8-wMJ"/>
+                            <constraint firstItem="Fd5-bp-9PH" firstAttribute="top" secondItem="Mgg-nD-a5e" secondAttribute="bottom" constant="8" id="o0d-xs-Abq"/>
+                            <constraint firstItem="Fd5-bp-9PH" firstAttribute="centerX" secondItem="fN6-dh-7vC" secondAttribute="centerX" id="spa-nO-73i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblWinStory" destination="Fd5-bp-9PH" id="lrS-j6-oly"/>
+                        <outlet property="lblWinText" destination="9Mv-qL-1Zx" id="iRH-Jf-SLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quP-6x-VdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Hangman0" width="75" height="75"/>
+        <image name="Hangman6" width="75" height="75"/>
+    </resources>
+</document>
