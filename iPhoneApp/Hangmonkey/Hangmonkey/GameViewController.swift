@@ -91,9 +91,9 @@ class GameViewController: UIViewController {
         return wordString
     }
 
-
     @IBAction func btnPlayTurnACTION(_ sender: AnyObject) {
-        // TODO: Error handling (if nothing in text field or more than one character)
+        // TODO: text field error handling
+        // play the turn
         if let guessedLetter = txtGuess.text {
             // if guessedLetter is in the secretWord
             if secretWordArray.contains(Character(guessedLetter)) {
@@ -111,18 +111,21 @@ class GameViewController: UIViewController {
                 }
                 if winOrLose == 1 {
                     // TODO: segue to EndGameViewController
-                    // let endView = EndGameViewController()
-                    // self.present(endView, animated: true, completion: nil)
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "endGame") as! EndGameViewController
+                    self.present(nextViewController, animated:true, completion:nil)
                     print("You Win!")
                 }
+                txtGuess.text = ""
             } else {
                 // increase the count
                 count += 1
                 // end game if count = 6
                 if count == 6 {
                     // TODO: segue to EndGameViewController
-                    // let endView = EndGameViewController()
-                    // self.present(endView, animated: true, completion: nil)
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "endGame") as! EndGameViewController
+                    self.present(nextViewController, animated:true, completion:nil)
                     print("You lose!")
                 } else {
                     // add guessedLetter to missedLetters
@@ -134,6 +137,7 @@ class GameViewController: UIViewController {
                     let letterString = String(describing: missedLetters)
                     lblGuessedLetters.text = letterString
                 }
+                txtGuess.text = ""
             }
         }
     }

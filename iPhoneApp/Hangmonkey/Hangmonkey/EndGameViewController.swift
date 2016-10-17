@@ -14,12 +14,9 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var lblWinStory: UILabel!
     @IBOutlet weak var imgMonkeyPic: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        /*
         // change text for win or loss state
         if winOrLose == 0 {
             // loss
@@ -31,7 +28,7 @@ class EndGameViewController: UIViewController {
             lblWinText.text = "You Win!"
             lblWinStory.text = "Monkey is saved. At least, for now..."
             imgMonkeyPic.image = UIImage(named: "Hangman0")
-        } */
+        }
     }
     
     override func didReceiveMemoryWarning() {
