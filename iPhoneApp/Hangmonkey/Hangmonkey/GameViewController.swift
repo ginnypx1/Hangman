@@ -2,139 +2,137 @@
 //  GameViewController.swift
 //  Hangmonkey
 //
-//  Created by Ginny Pennekamp on 10/16/16.
-//  Copyright © 2016 GhostBirdGames. All rights reserved.
+//  Created by Ginny Pennekamp on 4/9/17.
+//  Copyright © 2017 GhostBirdGames. All rights reserved.
 //
 
 import UIKit
 
-var winOrLose = 0
-
-var secretWord: String = ""
-var secretWordArray = [Character]()
-var wordArray = [Character]()
-var missedLetters = [String]()
-var correctLetters = [String]()
-var count: Int = 0
-
-func pickSecretWord() {
-    // chooses a secret word to start the game
-    let randomNumber = Int(arc4random_uniform(UInt32(gameWords.count)))
-    secretWord = gameWords[randomNumber]
-}
-
-class GameViewController: UIViewController {
-
+class GameViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var lblGameWord: UILabel!
     @IBOutlet weak var lblGuessedLetters: UILabel!
     @IBOutlet weak var txtGuess: UITextField!
     @IBOutlet weak var imgNoose: UIImageView!
     
-    // MARK: - Apple functions
+    // MARK: - Properties
+    
+    var hangmanGame: HangmanGame?
+
+    // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpGame()
+        // set up text field delegate
+        txtGuess.delegate = self
         
+        // set up the game board
+        guard let hangmanGame = self.hangmanGame else {
+            print("Oops. No game has been initiated.")
+            return
+        }
+        hangmanGame.setUpGame()
+        
+        // display the secretWord as blanks
+        lblGameWord.text = displayWord()
+        lblGameWord.addTextSpacing(spacing: 1.5)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // subscribe to keyboard notifications
+        subscribeToKeyboardNotifications()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // unsubscribe to keyboard notifications
+        unsubscribeToKeyboardNotifications()
+    }
+    
+    // MARK: - Text Field Delegate
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         txtGuess.resignFirstResponder()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    func setUpGame() {
-        // Choose a secret word
-        pickSecretWord()
-        print(secretWord)
-        for character in secretWord.characters {
-            secretWordArray.append(character)
-        }
-        // Set the count to zero
-        count = 0
-        // empty arrays
-        correctLetters.removeAll(keepingCapacity: true)
-        wordArray.removeAll(keepingCapacity: true)
-        missedLetters.removeAll(keepingCapacity: true)
-        // display the secretWord as blanks
-        lblGameWord.text = displayWord()
-        lblGameWord.addTextSpacing(spacing: 1.5)
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
+    
+    // MARK: - Display Secret Word
     
     func displayWord() -> String {
+        guard let hangmanGame = self.hangmanGame else {
+            print("Oops. No game has been initiated.")
+            return ""
+        }
+        
         // displays the secret word with the hidden/guessed letters revealed
-        wordArray.removeAll(keepingCapacity: true)
-        for character in secretWord.characters {
-            if correctLetters.contains(String(character)) {
-                wordArray.append(character)
+        hangmanGame.wordArray.removeAll(keepingCapacity: true)
+        for character in hangmanGame.secretWord.characters {
+            if hangmanGame.correctLetters.contains(String(character)) {
+                hangmanGame.wordArray.append(character)
             } else {
-                wordArray.append("_")
+                hangmanGame.wordArray.append("_")
             }
         }
-        let wordString = String(wordArray)
+        let wordString = String(hangmanGame.wordArray)
         return wordString
     }
-
+    
+    // MARK: - Play turn
+    
     @IBAction func btnPlayTurnACTION(_ sender: AnyObject) {
-        // TODO: text field error handling
+        guard let hangmanGame = self.hangmanGame else {
+            print("Oops. No game has been initiated.")
+            return
+        }
+
         // play the turn
         if let guessedLetter = txtGuess.text {
             // if guessedLetter is in the secretWord
-            if secretWordArray.contains(Character(guessedLetter)) {
+            if hangmanGame.secretWordArray.contains(Character(guessedLetter)) {
                 // add the letter to correctLetters
-                correctLetters.append(guessedLetter)
+                hangmanGame.correctLetters.append(guessedLetter)
                 // change the secretWord display
                 lblGameWord.text = displayWord()
                 lblGameWord.addTextSpacing(spacing: 1.5)
                 // check to see if game has been won
-                winOrLose = 1
-                for character in secretWord.characters {
-                    if (correctLetters.contains(String(character))) == false {
-                        winOrLose = 0
+                hangmanGame.gameState = .win
+                for character in hangmanGame.secretWord.characters {
+                    if (hangmanGame.correctLetters.contains(String(character))) == false {
+                        hangmanGame.gameState = .lose
                     }
                 }
-                if winOrLose == 1 {
-                    // TODO: segue to EndGameViewController
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "endGame") as! EndGameViewController
-                    self.present(nextViewController, animated:true, completion:nil)
-                    print("You Win!")
+                if hangmanGame.gameState == .win {
+                    // segue back to view controller
+                    let mainView = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! ViewController
+                    mainView.hangmanGame = self.hangmanGame
+                    present(mainView, animated: true, completion: nil)
                 }
                 txtGuess.text = ""
             } else {
                 // increase the count
-                count += 1
+                hangmanGame.count += 1
                 // end game if count = 6
-                if count == 6 {
-                    // TODO: segue to EndGameViewController
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "endGame") as! EndGameViewController
-                    self.present(nextViewController, animated:true, completion:nil)
-                    print("You lose!")
+                if hangmanGame.count == 6 {
+                    // segue back to view controller
+                    let mainView = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! ViewController
+                    mainView.hangmanGame = self.hangmanGame
+                    present(mainView, animated: true, completion: nil)
                 } else {
                     // add guessedLetter to missedLetters
-                    missedLetters.append(guessedLetter)
+                    hangmanGame.missedLetters.append(guessedLetter)
                     // change the picture to the next image
-                    let imageNum = gamePics[count]
+                    let imageNum = hangmanGame.gamePics[hangmanGame.count]
                     imgNoose.image = UIImage(named: imageNum)
                     // add the guessed Letter to lblGuessedLetters
-                    let letterString = String(describing: missedLetters)
+                    let letterString = String(describing: hangmanGame.missedLetters)
                     lblGuessedLetters.text = letterString
                 }
                 txtGuess.text = ""
@@ -144,7 +142,7 @@ class GameViewController: UIViewController {
 }
 
 // allows character spacing
-extension UILabel{
+extension UILabel {
     func addTextSpacing(spacing: CGFloat){
         let attributedString = NSMutableAttributedString(string: self.text!)
         attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSRange(location: 0, length: self.text!.characters.count))

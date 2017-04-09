@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Hangmonkey
 //
-//  Created by Ginny Pennekamp on 10/16/16.
-//  Copyright © 2016 GhostBirdGames. All rights reserved.
+//  Created by Ginny Pennekamp on 4/9/17.
+//  Copyright © 2017 GhostBirdGames. All rights reserved.
 //
 
 import UIKit

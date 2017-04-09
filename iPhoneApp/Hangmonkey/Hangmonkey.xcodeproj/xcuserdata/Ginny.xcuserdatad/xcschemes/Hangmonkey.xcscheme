@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34BBDFCF1DB3E5610089E385"
+               BlueprintIdentifier = "34161A4A1E9A96E2007964E7"
                BuildableName = "Hangmonkey.app"
                BlueprintName = "Hangmonkey"
                ReferencedContainer = "container:Hangmonkey.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34BBDFCF1DB3E5610089E385"
+            BlueprintIdentifier = "34161A4A1E9A96E2007964E7"
             BuildableName = "Hangmonkey.app"
             BlueprintName = "Hangmonkey"
             ReferencedContainer = "container:Hangmonkey.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34BBDFCF1DB3E5610089E385"
+            BlueprintIdentifier = "34161A4A1E9A96E2007964E7"
             BuildableName = "Hangmonkey.app"
             BlueprintName = "Hangmonkey"
             ReferencedContainer = "container:Hangmonkey.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34BBDFCF1DB3E5610089E385"
+            BlueprintIdentifier = "34161A4A1E9A96E2007964E7"
             BuildableName = "Hangmonkey.app"
             BlueprintName = "Hangmonkey"
             ReferencedContainer = "container:Hangmonkey.xcodeproj">
