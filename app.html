@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hangmonkey | About</title>
+    <title>Hangmonkey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -24,31 +24,38 @@
         </div>
     </nav>
 
-    <div class="gallows col-md-4 secondary">
-        <h1>Hangmonkey</h1>
-        <p>Play a simple game of hangman.</p>
-        <p>This monkey hasn't been <strong>that</strong> bad...</p>
-        <p>Does he really deserve to die?</p>
+        <div class="container">
+        <div class="row">
+
+            <div class="directions col-md-4">
+                <img src="img/app-screenshots/4.7-inch Screenshot 1.jpg" alt="Screenshot of the start of a game of hangmonkey">
+            </div>
+
+            <div class="directions col-md-4">
+                <img src="img/app-screenshots1/4.7-inch Screenshot 1.jpg" alt="Screenshot of a hangmonkey game in action">
+            </div>
+
+            <div class="diceroll col-md-4">
+                <img src="img/Hangman6.png" alt="Hangmonkey hanging from the gallows">
+                <br>
+                <br>
+                <p>"Hangmonkey" is a version of hangman, with a sock monkey in grave danger.</p>
+                <p>Guess the word in order to save sock monkey's life.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="game-window col-md-8 secondary">
-        <p>I created this version of Hangman to help me practice Python in several forms.</p>
-        <p>You can see the evolution of the project in my <a href="https://github.com/ginnypx1/Hangman">Github repository:</a></p>
-        <ul class="versions">
-            <li><strong>iPhoneApp/Hangmonkey/Hangman.xcodeproj</strong> plays an iPhone version of Hangmonkey.</li>
-            <li><strong>hangman.py</strong> plays hangman in the command line.</li>
-            <li><strong>tk_hangmonkey.py</strong> plays hangmonkey in a Tkinter widget.</li>
-            <li><strong>djhangmonkey</strong> runs a django version of Hangmonkey.</li>
-            <li><strong>Hangman.xcodeproj</strong> runs an iPhone version of Hangmonkey.</li>
-        </ul>
-        <p>Right now, monkey only knows the names of other zoo animals. Future versions will expand his vocabulary.</p>
-    </div>
-
-    <footer class="site-footer">
+    <footer>
         <p>Ghostbird Games</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#play-again").hide();
+        });
+    </script>
+    <script src="js/hangman.js" type="text/javascript"></script>
 </body>
 </html>
