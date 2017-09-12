@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension GameViewController {
+    
     // MARK: - Keyboard Notifications
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
@@ -19,14 +20,14 @@ extension GameViewController {
         return keyboardSize.cgRectValue.height
     }
     
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         // shifts the view up the height of the keyboard
         if txtGuess.isFirstResponder {
             view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         // shifts the view down to the bottom when keyboard closes
         view.frame.origin.y = 0
     }
@@ -41,5 +42,16 @@ extension GameViewController {
         // unsubscribes to keyboard notifications
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    // MARK: - Text Field Delegate
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtGuess.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

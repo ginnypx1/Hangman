@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		34161A4F1E9A96E2007964E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A4E1E9A96E2007964E7 /* AppDelegate.swift */; };
-		34161A511E9A96E2007964E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A501E9A96E2007964E7 /* ViewController.swift */; };
+		34161A511E9A96E2007964E7 /* GameStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A501E9A96E2007964E7 /* GameStateViewController.swift */; };
 		34161A541E9A96E2007964E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34161A521E9A96E2007964E7 /* Main.storyboard */; };
 		34161A561E9A96E2007964E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34161A551E9A96E2007964E7 /* Assets.xcassets */; };
 		34161A591E9A96E2007964E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34161A571E9A96E2007964E7 /* LaunchScreen.storyboard */; };
 		34161A611E9AE22E007964E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A601E9AE22E007964E7 /* GameViewController.swift */; };
 		34161A671E9AE40C007964E7 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A661E9AE40C007964E7 /* GameModel.swift */; };
 		34161A6B1E9AF617007964E7 /* ExtensionGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A6A1E9AF617007964E7 /* ExtensionGameViewController.swift */; };
+		3422E9781F686DB000520A5B /* TextSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3422E9771F686DB000520A5B /* TextSpacing.swift */; };
 		34407B071E9D58E3006A34FF /* HangmonkeyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34407B061E9D58E2006A34FF /* HangmonkeyModelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +32,7 @@
 /* Begin PBXFileReference section */
 		34161A4B1E9A96E2007964E7 /* Hangmonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangmonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34161A4E1E9A96E2007964E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34161A501E9A96E2007964E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34161A501E9A96E2007964E7 /* GameStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateViewController.swift; sourceTree = "<group>"; };
 		34161A531E9A96E2007964E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34161A551E9A96E2007964E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34161A581E9A96E2007964E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 		34161A601E9AE22E007964E7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		34161A661E9AE40C007964E7 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		34161A6A1E9AF617007964E7 /* ExtensionGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionGameViewController.swift; sourceTree = "<group>"; };
+		3422E9771F686DB000520A5B /* TextSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpacing.swift; sourceTree = "<group>"; };
 		34407AFC1E9D58B8006A34FF /* HangmonkeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangmonkeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34407B001E9D58BB006A34FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34407B061E9D58E2006A34FF /* HangmonkeyModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmonkeyModelTests.swift; sourceTree = "<group>"; };
@@ -84,16 +86,49 @@
 			isa = PBXGroup;
 			children = (
 				34161A4E1E9A96E2007964E7 /* AppDelegate.swift */,
-				34161A501E9A96E2007964E7 /* ViewController.swift */,
-				34161A601E9AE22E007964E7 /* GameViewController.swift */,
-				34161A6A1E9AF617007964E7 /* ExtensionGameViewController.swift */,
-				34161A661E9AE40C007964E7 /* GameModel.swift */,
-				34161A521E9A96E2007964E7 /* Main.storyboard */,
-				34161A551E9A96E2007964E7 /* Assets.xcassets */,
-				34161A571E9A96E2007964E7 /* LaunchScreen.storyboard */,
+				3422E9731F68673A00520A5B /* Model */,
+				3422E9721F68672C00520A5B /* Controller */,
+				3422E9741F68674000520A5B /* View */,
+				3422E9761F68677000520A5B /* Assets */,
 				34161A5A1E9A96E2007964E7 /* Info.plist */,
 			);
 			path = Hangmonkey;
+			sourceTree = "<group>";
+		};
+		3422E9721F68672C00520A5B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				34161A501E9A96E2007964E7 /* GameStateViewController.swift */,
+				34161A601E9AE22E007964E7 /* GameViewController.swift */,
+				34161A6A1E9AF617007964E7 /* ExtensionGameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3422E9731F68673A00520A5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34161A661E9AE40C007964E7 /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3422E9741F68674000520A5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3422E9771F686DB000520A5B /* TextSpacing.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3422E9761F68677000520A5B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				34161A521E9A96E2007964E7 /* Main.storyboard */,
+				34161A551E9A96E2007964E7 /* Assets.xcassets */,
+				34161A571E9A96E2007964E7 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		34407AFD1E9D58BA006A34FF /* HangmonkeyTests */ = {
@@ -150,17 +185,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = GhostBirdGames;
 				TargetAttributes = {
 					34161A4A1E9A96E2007964E7 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = B875NM54ML;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					34407AFB1E9D58B8006A34FF = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = B875NM54ML;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 34161A4A1E9A96E2007964E7;
 					};
@@ -212,7 +249,8 @@
 			files = (
 				34161A671E9AE40C007964E7 /* GameModel.swift in Sources */,
 				34161A6B1E9AF617007964E7 /* ExtensionGameViewController.swift in Sources */,
-				34161A511E9A96E2007964E7 /* ViewController.swift in Sources */,
+				3422E9781F686DB000520A5B /* TextSpacing.swift in Sources */,
+				34161A511E9A96E2007964E7 /* GameStateViewController.swift in Sources */,
 				34161A611E9AE22E007964E7 /* GameViewController.swift in Sources */,
 				34161A4F1E9A96E2007964E7 /* AppDelegate.swift in Sources */,
 			);
@@ -266,7 +304,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -274,7 +314,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -303,6 +347,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -317,7 +362,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -325,7 +372,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -346,6 +397,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -360,7 +412,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.Hangmonkey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -373,7 +426,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.Hangmonkey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -386,7 +440,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.HangmonkeyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangmonkey.app/Hangmonkey";
 			};
 			name = Debug;
@@ -400,7 +455,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.HangmonkeyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangmonkey.app/Hangmonkey";
 			};
 			name = Release;
@@ -433,6 +489,7 @@
 				34407B041E9D58BD006A34FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
