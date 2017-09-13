@@ -75,10 +75,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnPlayButton" destination="qC0-uu-hb9" id="dKp-DQ-rmd"/>
-                        <outlet property="imgMonkeyPic" destination="sM8-NV-ijp" id="bvS-WS-lXo"/>
-                        <outlet property="lblWinStory" destination="dnC-wk-u1K" id="9n3-vX-WPn"/>
-                        <outlet property="lblWinText" destination="Ipe-ha-Hxc" id="0Fs-hO-KrI"/>
+                        <outlet property="imageView" destination="sM8-NV-ijp" id="2Fg-XJ-UeZ"/>
+                        <outlet property="playButton" destination="qC0-uu-hb9" id="vbN-S1-db3"/>
+                        <outlet property="storyLabel" destination="dnC-wk-u1K" id="AQ3-df-UJ8"/>
+                        <outlet property="winLabel" destination="Ipe-ha-Hxc" id="0Ye-XU-T8y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,6 +128,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="q52-hX-eZC" id="N3n-Xa-bDt"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Guessed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-Pc-0l7">
                                                 <rect key="frame" x="0.0" y="123" width="320" height="61"/>
@@ -171,10 +174,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imgNoose" destination="rOm-r3-B0c" id="jgC-7s-Mih"/>
-                        <outlet property="lblGameWord" destination="FVr-E2-OBH" id="Vjg-V9-cnd"/>
-                        <outlet property="lblGuessedLetters" destination="Y9X-Qb-eZe" id="uqS-Zr-A5p"/>
-                        <outlet property="txtGuess" destination="vsZ-9y-Q7u" id="zUa-zC-n8L"/>
+                        <outlet property="gameWord" destination="FVr-E2-OBH" id="4se-Do-GYe"/>
+                        <outlet property="guessedLetters" destination="Y9X-Qb-eZe" id="wr4-zk-Cn5"/>
+                        <outlet property="imageView" destination="rOm-r3-B0c" id="E4V-wU-qgt"/>
+                        <outlet property="textField" destination="vsZ-9y-Q7u" id="kto-tP-KU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eog-8S-Ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>

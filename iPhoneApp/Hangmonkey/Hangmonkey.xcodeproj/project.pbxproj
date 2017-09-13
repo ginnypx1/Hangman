@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3415954E1F69DDD2009EADC1 /* HangmonkeyGameStateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415954D1F69DDD2009EADC1 /* HangmonkeyGameStateViewControllerTests.swift */; };
+		341595501F69E263009EADC1 /* HangmonkeyGameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415954F1F69E263009EADC1 /* HangmonkeyGameViewControllerTests.swift */; };
 		34161A4F1E9A96E2007964E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A4E1E9A96E2007964E7 /* AppDelegate.swift */; };
 		34161A511E9A96E2007964E7 /* GameStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161A501E9A96E2007964E7 /* GameStateViewController.swift */; };
 		34161A541E9A96E2007964E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34161A521E9A96E2007964E7 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3415954D1F69DDD2009EADC1 /* HangmonkeyGameStateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmonkeyGameStateViewControllerTests.swift; sourceTree = "<group>"; };
+		3415954F1F69E263009EADC1 /* HangmonkeyGameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmonkeyGameViewControllerTests.swift; sourceTree = "<group>"; };
 		34161A4B1E9A96E2007964E7 /* Hangmonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangmonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34161A4E1E9A96E2007964E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34161A501E9A96E2007964E7 /* GameStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			children = (
 				34407B001E9D58BB006A34FF /* Info.plist */,
 				34407B061E9D58E2006A34FF /* HangmonkeyModelTests.swift */,
+				3415954D1F69DDD2009EADC1 /* HangmonkeyGameStateViewControllerTests.swift */,
+				3415954F1F69E263009EADC1 /* HangmonkeyGameViewControllerTests.swift */,
 			);
 			path = HangmonkeyTests;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34407B071E9D58E3006A34FF /* HangmonkeyModelTests.swift in Sources */,
+				3415954E1F69DDD2009EADC1 /* HangmonkeyGameStateViewControllerTests.swift in Sources */,
+				341595501F69E263009EADC1 /* HangmonkeyGameViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

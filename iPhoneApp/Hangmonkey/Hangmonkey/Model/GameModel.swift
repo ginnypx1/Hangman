@@ -36,7 +36,7 @@ class HangmanGame {
     
     func setUpGame() {
         self.pickSecretWord()
-        print("The secret word is: \(secretWord).")
+        print("The secret word is: \(secretWord)")
         
         for character in secretWord.characters {
             self.secretWordArray.append(character)
@@ -47,6 +47,19 @@ class HangmanGame {
         self.correctLetters.removeAll(keepingCapacity: true)
         self.wordArray.removeAll(keepingCapacity: true)
         self.missedLetters.removeAll(keepingCapacity: true)
+    }
+    
+    func displayWord() -> String {
+        wordArray.removeAll(keepingCapacity: true)
+        for character in secretWord.characters {
+            if correctLetters.contains(String(character)) {
+                wordArray.append(character)
+            } else {
+                wordArray.append("_")
+            }
+        }
+        let wordString = String(wordArray)
+        return wordString
     }
     
     func checkForWin() -> Bool {

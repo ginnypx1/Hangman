@@ -11,11 +11,11 @@ import UIKit
 class GameStateViewController: UIViewController {
     
     // MARK: - Outlets
-
-    @IBOutlet weak var btnPlayButton: UIButton!
-    @IBOutlet weak var lblWinText: UILabel!
-    @IBOutlet weak var lblWinStory: UILabel!
-    @IBOutlet weak var imgMonkeyPic: UIImageView!
+    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var storyLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     // MARK: - Properties
     
@@ -45,22 +45,22 @@ class GameStateViewController: UIViewController {
     }
     
     func displayGameStart() {
-        lblWinText.text = "Hangmonkey"
-        lblWinStory.text = "I have a secret word in mind. Can you guess it before the monkey dies?"
-        imgMonkeyPic.image = UIImage(named: "Hangman6")
-        btnPlayButton.setTitle("Play", for: .normal)
+        winLabel.text = "Hangmonkey"
+        storyLabel.text = "I have a secret word in mind. Can you guess it before the monkey dies?"
+        imageView.image = UIImage(named: "Hangman6")
+        playButton.setTitle("Play", for: .normal)
     }
     
     func displayWin() {
-        lblWinText.text = "You Win!"
-        lblWinStory.text = "Monkey is saved. At least, for now..."
-        imgMonkeyPic.image = UIImage(named: "Hangman0")
+        winLabel.text = "You Win!"
+        storyLabel.text = "Monkey is saved. At least, for now..."
+        imageView.image = UIImage(named: "Hangman0")
     }
     
     func displayLoss() {
-        lblWinText.text = "You Lose!"
-        lblWinStory.text = "Monkey is dead. How could you? Oh, the humanity!"
-        imgMonkeyPic.image = UIImage(named: "Hangman6")
+        winLabel.text = "You Lose!"
+        storyLabel.text = "Monkey is dead. How could you? Oh, the humanity!"
+        imageView.image = UIImage(named: "Hangman6")
     }
     
     // MARK: - Play Game
