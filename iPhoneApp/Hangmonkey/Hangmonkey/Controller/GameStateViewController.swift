@@ -68,7 +68,7 @@ class GameStateViewController: UIViewController {
     @IBAction func playGame(_ sender: Any) {
         let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
         gameView.hangmanGame = self.hangmanGame
-        gameView.modalTransitionStyle = .partialCurl
+        gameView.modalTransitionStyle = .flipHorizontal
         present(gameView, animated: true, completion: nil)
     }
 

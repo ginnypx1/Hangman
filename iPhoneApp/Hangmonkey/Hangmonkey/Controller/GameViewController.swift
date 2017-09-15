@@ -93,7 +93,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     func presentEndGame() {
         let gameStateView = self.storyboard?.instantiateViewController(withIdentifier: "GameStateViewController") as! GameStateViewController
         gameStateView.hangmanGame = self.hangmanGame
-        gameStateView.modalTransitionStyle = .partialCurl
+        gameStateView.modalTransitionStyle = .flipHorizontal
         present(gameStateView, animated: true, completion: nil)
     }
     
