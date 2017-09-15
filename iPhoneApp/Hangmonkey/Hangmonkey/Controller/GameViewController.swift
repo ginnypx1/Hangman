@@ -17,24 +17,21 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var lblGameWord: UILabel!
-    @IBOutlet weak var lblGuessedLetters: UILabel!
-    @IBOutlet weak var txtGuess: UITextField!
-    @IBOutlet weak var imgNoose: UIImageView!
-    
     // MARK: - Properties
     
     var hangmanGame: HangmanGame!
+    var textFieldDelegate = HangmonkeyTextFieldDelegate()
 
     // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textField.delegate = textFieldDelegate
+       
         // set up the game board
         hangmanGame.setUpGame()
         gameWord.text = hangmanGame.displayWord()
-        gameWord.addTextSpacing(spacing: 1.5)
+        gameWord.addTextSpacing(spacing: 2.5)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,37 +46,43 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         unsubscribeToKeyboardNotifications()
     }
     
+    // MARK: - Update Display
+    
+    func updateDisplayWord() {
+        gameWord.text = hangmanGame.displayWord()
+        gameWord.addTextSpacing(spacing: 1.5)
+    }
+    
+    func updateGameDisplay() {
+        let imageNum = hangmanGame.gamePics[hangmanGame.count]
+        let newImage = UIImage(named: imageNum)!
+        AnimationManager.transitionAnimation(for: imageView, to: newImage)
+        // add the guess to guessedLetters
+        let letterString = hangmanGame.missedLetters.joined(separator: " ")
+        guessedLetters.text = letterString
+    }
+    
     // MARK: - Play turn
     
     @IBAction func playTurn(_ sender: UIButton) {
         
-        guard let guessedLetter = textField.text else { return }
+        guard let guessedLetter = textField.text?.lowercased() else { return }
         
         if hangmanGame.secretWordArray.contains(Character(guessedLetter)) {
-            // add the letter to correctLetters
             hangmanGame.correctLetters.append(guessedLetter)
-            // change the secretWord display
-            gameWord.text = hangmanGame.displayWord()
-            gameWord.addTextSpacing(spacing: 1.5)
-            // check to see if game has been won
+            updateDisplayWord()
             if hangmanGame.checkForWin() {
                 presentEndGame()
             }
         } else {
-            // if guessed letter is not in the secret word
+            // update the count and siplay
             hangmanGame.count += 1
             if hangmanGame.count == 6 {
                 hangmanGame.gameState = .lose
                 presentEndGame()
             } else {
-                // add guessedLetter to missedLetters
                 hangmanGame.missedLetters.append(guessedLetter)
-                // change the picture to the next image
-                let imageNum = hangmanGame.gamePics[hangmanGame.count]
-                imageView.image = UIImage(named: imageNum)
-                // add the guessed Letter to lblGuessedLetters
-                let letterString = String(describing: hangmanGame.missedLetters)
-                guessedLetters.text = letterString
+                updateGameDisplay()
             }
         }
         textField.text = ""
@@ -90,6 +93,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     func presentEndGame() {
         let gameStateView = self.storyboard?.instantiateViewController(withIdentifier: "GameStateViewController") as! GameStateViewController
         gameStateView.hangmanGame = self.hangmanGame
+        gameStateView.modalTransitionStyle = .partialCurl
         present(gameStateView, animated: true, completion: nil)
     }
     

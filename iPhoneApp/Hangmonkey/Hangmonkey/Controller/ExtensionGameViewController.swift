@@ -22,7 +22,7 @@ extension GameViewController {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         // shifts the view up the height of the keyboard
-        if txtGuess.isFirstResponder {
+        if textField.isFirstResponder {
             view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
@@ -44,14 +44,9 @@ extension GameViewController {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // MARK: - Text Field Delegate
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        txtGuess.resignFirstResponder()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // dismisses keyboard when screen touched
         textField.resignFirstResponder()
-        return true
     }
+
 }

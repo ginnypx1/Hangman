@@ -40,6 +40,16 @@
                ReferencedContainer = "container:Hangmonkey.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "34A200261F6C393300BF4266"
+               BuildableName = "HangmonkeyUITests.xctest"
+               BlueprintName = "HangmonkeyUITests"
+               ReferencedContainer = "container:Hangmonkey.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

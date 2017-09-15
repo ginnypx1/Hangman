@@ -30,29 +30,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Pxn-kh-VoC">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pxn-kh-VoC">
                                 <rect key="frame" x="0.0" y="20" width="320" height="491.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangmonkey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipe-ha-Hxc">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                        <rect key="frame" x="20.5" y="0.0" width="279.5" height="89"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Results for Game" identifier="ResultsLabel" label="Results Label"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="45"/>
                                         <color key="textColor" red="0.60820132493972778" green="0.16673234105110168" blue="0.10690819472074509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman6" translatesAutoresizingMaskIntoConstraints="NO" id="sM8-NV-ijp">
-                                        <rect key="frame" x="0.0" y="89" width="320" height="237"/>
+                                        <rect key="frame" x="85" y="89" width="150" height="237"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Status of Hangmonkey" identifier="HangmonkeyView" label="Hangmonkey View"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have a secret word in mind. Can you guess it before the monkey dies?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnC-wk-u1K">
-                                        <rect key="frame" x="0.0" y="326" width="320" height="165.5"/>
+                                        <rect key="frame" x="8" y="326" width="304" height="165.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Updates the Story of Hangmonkey" identifier="StoryLabel" label="Story Label"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                         <color key="textColor" red="0.5800635814666748" green="0.32312870025634766" blue="0.10018900781869888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="dnC-wk-u1K" firstAttribute="leading" secondItem="Pxn-kh-VoC" secondAttribute="leading" constant="8" id="p9J-Ew-8ED"/>
+                                    <constraint firstAttribute="trailing" secondItem="dnC-wk-u1K" secondAttribute="trailing" constant="8" id="wc1-U2-BWc"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-uu-hb9">
                                 <rect key="frame" x="0.0" y="511" width="320" height="57"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Play Button" identifier="PlayButton" label="Play Button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,13 +112,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="245.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-E2-OBH">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
-                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Game Word" identifier="GameWordLabel" label="Game Word"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="45"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="rOm-r3-B0c">
-                                                <rect key="frame" x="0.0" y="56.5" width="320" height="189"/>
+                                                <rect key="frame" x="0.0" y="67" width="320" height="178.5"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Hangmonkey Image" identifier="HangmonkeyImageView" label="Hangmonkey Image"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -119,27 +129,28 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Letter:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MLW-FR-VZt">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Pick a Letter" identifier="PickLetterLabel" label="Pick a Letter Label"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="36"/>
                                                 <color key="textColor" red="0.60820132490000001" green="0.16673234109999999" blue="0.1069081947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abcdefghijklmnopqrstuvwxyz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-9y-Q7u">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abcdefghijklmnopqrstuvwxyz" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-9y-Q7u">
                                                 <rect key="frame" x="0.0" y="61.5" width="320" height="61.5"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Text Field to Guess Letter" identifier="GuessTextField" label="Guess Text Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="q52-hX-eZC" id="N3n-Xa-bDt"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Guessed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-Pc-0l7">
                                                 <rect key="frame" x="0.0" y="123" width="320" height="61"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Already Guessed" identifier="AlreadyGuessedLabel" label="Already Guessed Label"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                                 <color key="textColor" red="0.58006358150000004" green="0.32312870030000002" blue="0.10018900779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-Qb-eZe">
                                                 <rect key="frame" x="0.0" y="184" width="320" height="61.5"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Guessed Letters" identifier="GuessedLettersLabel" label="Guessed Letters Label"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -152,6 +163,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="451-Rt-E0g">
                                 <rect key="frame" x="0.0" y="511" width="320" height="57"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Choose a Letter Button" identifier="ChooseLetterButton" label="Choose Letter Button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Choose">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

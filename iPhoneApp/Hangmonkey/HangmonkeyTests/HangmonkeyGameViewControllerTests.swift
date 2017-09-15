@@ -17,19 +17,58 @@ class HangmonkeyGameViewControllerTests: XCTestCase {
         super.setUp()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard
-            .instantiateViewController(
-                withIdentifier: "GameViewController")
+        sut = storyboard.instantiateViewController(withIdentifier: "GameViewController")
             as! GameViewController
-        _ = sut.view
+        sut.hangmanGame = HangmanGame()
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    // MARK: - Test Outlets Exist
+    // MARK: TODO: Do not know how to inject hangman game into Game View Controller
     
+    /*
     
+    func test_HasGameWordLabel() {
+        XCTAssertNotNil(sut.gameWord)
+    }
     
+    func test_hasGuessedLettersLabel() {
+        XCTAssertNotNil(sut.guessedLetters)
+    }
+    
+    func test_HasTextField() {
+        XCTAssertNotNil(sut.textField)
+    }
+    
+    func test_HasImageView() {
+        XCTAssertNotNil(sut.imageView)
+    }
+    
+    // MARK: - Test properties
+    
+    func test_textFieldDelegate_IsSet() {
+        XCTAssertNotNil(sut.textFieldDelegate)
+    }
+    
+    // MARK: - Test Game Load
+    
+    func test_displayWord_Exists() {
+        let displayWord = sut.gameWord.text
+        XCTAssertNotNil(displayWord)
+        XCTAssertNotEqual(displayWord, "")
+    }
+    
+    func test_guessedLetters_IsInitiallyEmpty() {
+        let guessedLetters = sut.guessedLetters.text
+        XCTAssertNil(guessedLetters)
+    }
+    
+    func test_imageView_IsEmptyNoose() {
+        let emptyNoose = UIImage(named: "Hangman0")
+        let initialImage = sut.imageView.image
+        XCTAssertEqual(emptyNoose, initialImage)
+    }
+    */
 }
