@@ -27,11 +27,6 @@ class HangmonkeyModelTests: XCTestCase {
     
     // MARK: - Test Properties
     
-    func test_HangmanGame_HasGameState() {
-        let gameState = sut.gameState
-        XCTAssertNotNil(gameState)
-    }
-    
     func test_HangmanGame_HasSecretWord() {
         let secretWord = sut.secretWord
         XCTAssertNotNil(secretWord)
@@ -73,11 +68,6 @@ class HangmonkeyModelTests: XCTestCase {
     }
     
     // MARK: - Test Property Initialization
-    
-    func test_HangmanGame_InitialGameState_IsStart() {
-        let gameState = sut.gameState
-        XCTAssertEqual(gameState, GameState.start)
-    }
     
     func test_HangmanGame_InitialSecretWord_IsEmpty() {
         let secretWord = sut.secretWord
@@ -154,7 +144,6 @@ class HangmonkeyModelTests: XCTestCase {
         sut.correctLetters = ["c", "a", "t"]
         let result = sut.checkForWin()
         XCTAssertEqual(result, true)
-        XCTAssertEqual(sut.gameState, GameState.win)
     }
     
     func test_CheckForWin_catchesLoss() {
@@ -162,7 +151,6 @@ class HangmonkeyModelTests: XCTestCase {
         sut.correctLetters = ["c", "a"]
         let result = sut.checkForWin()
         XCTAssertEqual(result, false)
-        XCTAssertEqual(sut.gameState, GameState.lose)
     }
 
     

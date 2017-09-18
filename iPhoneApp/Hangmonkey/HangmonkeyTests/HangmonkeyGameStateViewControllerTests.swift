@@ -46,15 +46,10 @@ class HangmonkeyGameStateViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.imageView)
     }
     
-    // MARK: - Test viewDidLoad loads game if needed
-    
-    func test_HangmanGame_Inits_InViewDidLoad() {
-        XCTAssertNotNil(sut.hangmanGame)
-    }
-    
     // MARK: - Test displayGameState
     
-    func test_displayGameState_displaysStart() {
+    func test_presentEndGame_displaysStart() {
+        sut.presentEndGame(.start)
         let winText = sut.winLabel.text
         let storyText = sut.storyLabel.text
         let image = sut.imageView.image
@@ -65,26 +60,28 @@ class HangmonkeyGameStateViewControllerTests: XCTestCase {
         XCTAssertEqual(buttonTitle, "Play")
     }
     
-    func test_displayGameState_displaysWin() {
-        sut.hangmanGame.gameState = GameState.win
-        sut.displayGameState()
+    func test_presentEndGame_displaysWin() {
+        sut.presentEndGame(.win)
         let winText = sut.winLabel.text
         let storyText = sut.storyLabel.text
         let image = sut.imageView.image
+        let buttonTitle = sut.playButton.title(for: .normal)
         XCTAssertEqual(winText, "You Win!")
         XCTAssertEqual(storyText, "Monkey is saved. At least, for now...")
         XCTAssertEqual(image, UIImage(named: "Hangman0"))
+        XCTAssertEqual(buttonTitle, "Play Again")
     }
     
     func test_displayGameState_displaysLoss() {
-        sut.hangmanGame.gameState = GameState.lose
-        sut.displayGameState()
+        sut.presentEndGame(.lose)
         let winText = sut.winLabel.text
         let storyText = sut.storyLabel.text
         let image = sut.imageView.image
+        let buttonTitle = sut.playButton.title(for: .normal)
         XCTAssertEqual(winText, "You Lose!")
         XCTAssertEqual(storyText, "Monkey is dead. How could you? Oh, the humanity!")
         XCTAssertEqual(image, UIImage(named: "Hangman6"))
+        XCTAssertEqual(buttonTitle, "Play Again")
     }
 
     // TODO: Test that play game transitions to GameViewController

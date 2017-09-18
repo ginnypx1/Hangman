@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Play Button" identifier="PlayButton" label="Play Button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Play Again">
+                                <state key="normal" title="Play">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -82,6 +82,7 @@
                             <constraint firstItem="Pxn-kh-VoC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v6c-Kk-tWb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MfW-XT-J0m"/>
                     <connections>
                         <outlet property="imageView" destination="sM8-NV-ijp" id="2Fg-XJ-UeZ"/>
                         <outlet property="playButton" destination="qC0-uu-hb9" id="vbN-S1-db3"/>
@@ -91,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
+            <point key="canvasLocation" x="316.875" y="138.38028169014083"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="2fy-S5-GRV">
@@ -169,7 +170,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playTurn:" destination="q52-hX-eZC" eventType="touchUpInside" id="qTM-Bz-AS4"/>
+                                    <action selector="chooseLetter:" destination="q52-hX-eZC" eventType="touchUpInside" id="niQ-5V-vY1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eog-8S-Ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="139"/>
+            <point key="canvasLocation" x="1250.625" y="138.38028169014083"/>
         </scene>
     </scenes>
     <resources>

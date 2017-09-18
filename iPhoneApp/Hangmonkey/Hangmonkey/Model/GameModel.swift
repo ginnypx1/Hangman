@@ -18,8 +18,6 @@ class HangmanGame {
     
     // MARK: - Game Variables
     
-    var gameState: GameState = .start
-    
     var secretWord: String = ""
     var secretWordArray = [Character]()
     var wordArray = [Character]()
@@ -63,10 +61,8 @@ class HangmanGame {
     }
     
     func checkForWin() -> Bool {
-        gameState = .win
         for character in secretWord.characters {
             if (correctLetters.contains(String(character))) == false {
-                gameState = .lose
                 return false
             }
         }

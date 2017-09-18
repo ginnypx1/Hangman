@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol GameStateDelegate {
+    func presentEndGame(_ gameState: GameState)
+}
+
 class GameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Outlets
@@ -20,6 +24,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Properties
     
     var hangmanGame: HangmanGame!
+    
+    var gameStateDelegate: GameStateDelegate!
     var textFieldDelegate = HangmonkeyTextFieldDelegate()
 
     // MARK: - View
@@ -27,7 +33,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = textFieldDelegate
-       
+        
+        // create game if needed
+        hangmanGame = HangmanGame()
+        
         // set up the game board
         hangmanGame.setUpGame()
         gameWord.text = hangmanGame.displayWord()
@@ -64,37 +73,39 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Play turn
     
-    @IBAction func playTurn(_ sender: UIButton) {
-        
-        guard let guessedLetter = textField.text?.lowercased() else { return }
-        
-        if hangmanGame.secretWordArray.contains(Character(guessedLetter)) {
-            hangmanGame.correctLetters.append(guessedLetter)
+    func playTurn(withLetter letter: String) {
+        if hangmanGame.secretWordArray.contains(Character(letter)) {
+            hangmanGame.correctLetters.append(letter)
             updateDisplayWord()
             if hangmanGame.checkForWin() {
+                gameStateDelegate.presentEndGame(.win)
                 presentEndGame()
             }
         } else {
-            // update the count and siplay
+            // update the count and display
             hangmanGame.count += 1
             if hangmanGame.count == 6 {
-                hangmanGame.gameState = .lose
+                gameStateDelegate.presentEndGame(.lose)
                 presentEndGame()
             } else {
-                hangmanGame.missedLetters.append(guessedLetter)
+                hangmanGame.missedLetters.append(letter)
                 updateGameDisplay()
             }
         }
+    }
+    
+    @IBAction func chooseLetter(_ sender: UIButton) {
+        guard let guessedLetter = textField.text?.lowercased() else { return }
+        if guessedLetter == "" { return }
+        playTurn(withLetter: guessedLetter)
         textField.text = ""
+        textField.placeholder = "abcdefghijklmnopqrstuvwxyz"
     }
             
     // MARK: - Present Win or Loss
     
     func presentEndGame() {
-        let gameStateView = self.storyboard?.instantiateViewController(withIdentifier: "GameStateViewController") as! GameStateViewController
-        gameStateView.hangmanGame = self.hangmanGame
-        gameStateView.modalTransitionStyle = .flipHorizontal
-        present(gameStateView, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
