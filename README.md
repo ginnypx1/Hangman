@@ -30,3 +30,7 @@ To check out PyDice on the web: http://ginnypx1.github.io/PyDice
 ## Instructions
 
 To get started, guess a letter inside the text field...
+
+## Technical Information
+
+The iOS version of Hangmonkey has been updated for Swift 4.0 and iOS 11. It is unit and UI tested, and has VoiceOver and Dynamic Text accessibility features enabled.
