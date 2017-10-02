@@ -160,5 +160,15 @@ class HangmanGame {
         "Hangman5",
         "Hangman6"
     ]
+
+    static var accessibilityImageLabels = [
+        "Empty Noose",
+        "Sockmonkey head hanging from noose",
+        "Sockmonkey head and body hanging from noose",
+        "Sockmonkey head, body, and right arm hanging from noose",
+        "Sockmonkey head, body, and arms hanging from noose",
+        "Sockmonkey head, body, arms, and right leg hanging from noose",
+        "Sockmonkey, hanging from noose, dead"
+    ]
 }
 

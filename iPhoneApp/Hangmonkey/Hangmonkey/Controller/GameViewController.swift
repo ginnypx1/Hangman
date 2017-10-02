@@ -39,8 +39,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
         // set up the game board
         hangmanGame.setUpGame()
-        gameWord.text = hangmanGame.displayWord()
-        gameWord.addTextSpacing(spacing: 2.5)
+        updateDisplayWord()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,17 +57,22 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Update Display
     
     func updateDisplayWord() {
-        gameWord.text = hangmanGame.displayWord()
-        gameWord.addTextSpacing(spacing: 1.5)
+        let displayWord = hangmanGame.displayWord()
+        gameWord.text = displayWord
+        gameWord.accessibilityLabel = displayWord
+        gameWord.addTextSpacing(spacing: 2.5)
     }
     
     func updateGameDisplay() {
         let imageNum = hangmanGame.gamePics[hangmanGame.count]
         let newImage = UIImage(named: imageNum)!
         AnimationManager.transitionAnimation(for: imageView, to: newImage)
+        
         // add the guess to guessedLetters
         let letterString = hangmanGame.missedLetters.joined(separator: " ")
         guessedLetters.text = letterString
+        
+        applyAccessibilityToDisplay()
     }
     
     // MARK: - Play turn

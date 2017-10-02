@@ -16,7 +16,6 @@ class GameStateViewController: UIViewController, GameStateDelegate {
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-
     
     // MARK: - Display start, win or loss
     
@@ -35,6 +34,7 @@ class GameStateViewController: UIViewController, GameStateDelegate {
         winLabel.text = "Hangmonkey"
         storyLabel.text = "I have a secret word in mind. Can you guess it before the monkey dies?"
         imageView.image = UIImage(named: "Hangman6")
+        applyAccessibilityToGameStart()
     }
     
     func displayWin() {
@@ -42,6 +42,7 @@ class GameStateViewController: UIViewController, GameStateDelegate {
         storyLabel.text = "Monkey is saved. At least, for now..."
         imageView.image = UIImage(named: "Hangman0")
         playButton.setTitle("Play Again", for: .normal)
+        applyAccessibilityToWin()
     }
     
     func displayLoss() {
@@ -49,6 +50,7 @@ class GameStateViewController: UIViewController, GameStateDelegate {
         storyLabel.text = "Monkey is dead. How could you? Oh, the humanity!"
         imageView.image = UIImage(named: "Hangman6")
         playButton.setTitle("Play Again", for: .normal)
+        applyAccessibilityToLoss()
     }
     
     // MARK: - Play Game

@@ -14,9 +14,6 @@
         <array key="BradleyHand-Bold.ttf">
             <string>BradleyHandITCTT-Bold</string>
         </array>
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Game State View Controller-->
@@ -28,22 +25,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pxn-kh-VoC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="580.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="582.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangmonkey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipe-ha-Hxc">
-                                        <rect key="frame" x="48" y="0.0" width="279.5" height="136"/>
-                                        <accessibility key="accessibilityConfiguration" hint="Results for Game" identifier="ResultsLabel" label="Results Label"/>
+                                        <rect key="frame" x="48" y="0.0" width="279.5" height="136.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Results for Game" identifier="ResultsLabel">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="45"/>
                                         <color key="textColor" red="0.60820132493972778" green="0.16673234105110168" blue="0.10690819472074509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman6" translatesAutoresizingMaskIntoConstraints="NO" id="sM8-NV-ijp">
-                                        <rect key="frame" x="112.5" y="136" width="150" height="360.5"/>
-                                        <accessibility key="accessibilityConfiguration" hint="Status of Hangmonkey" identifier="HangmonkeyView" label="Hangmonkey View"/>
+                                        <rect key="frame" x="112.5" y="136.5" width="150" height="361.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Status of Hangmonkey" identifier="HangmonkeyView" label="Sockmonkey, hanging from noose, but still alive">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have a secret word in mind. Can you guess it before the monkey dies?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnC-wk-u1K">
-                                        <rect key="frame" x="8" y="496.5" width="359" height="84"/>
-                                        <accessibility key="accessibilityConfiguration" hint="Updates the Story of Hangmonkey" identifier="StoryLabel" label="Story Label"/>
+                                        <rect key="frame" x="8" y="498" width="359" height="84.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Updates the Story of Hangmonkey" identifier="StoryLabel">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                         <color key="textColor" red="0.5800635814666748" green="0.32312870025634766" blue="0.10018900781869888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -55,10 +59,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-uu-hb9">
-                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="602.5" width="375" height="64.5"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Play Button" identifier="PlayButton" label="Play Button"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -74,8 +78,8 @@
                             <constraint firstItem="qC0-uu-hb9" firstAttribute="leading" secondItem="GIa-QU-mxV" secondAttribute="leading" id="F9z-Kx-egL"/>
                             <constraint firstItem="GIa-QU-mxV" firstAttribute="trailing" secondItem="Pxn-kh-VoC" secondAttribute="trailing" id="IJt-CJ-4yN"/>
                             <constraint firstItem="GIa-QU-mxV" firstAttribute="trailing" secondItem="qC0-uu-hb9" secondAttribute="trailing" id="Kz0-EJ-XAT"/>
+                            <constraint firstItem="qC0-uu-hb9" firstAttribute="height" secondItem="GIa-QU-mxV" secondAttribute="height" multiplier="0.1" id="TOr-OA-Z1B"/>
                             <constraint firstItem="GIa-QU-mxV" firstAttribute="bottom" secondItem="qC0-uu-hb9" secondAttribute="bottom" id="m7E-Q2-8nh"/>
-                            <constraint firstItem="qC0-uu-hb9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="scp-qM-R72"/>
                             <constraint firstItem="Pxn-kh-VoC" firstAttribute="leading" secondItem="GIa-QU-mxV" secondAttribute="leading" id="v6c-Kk-tWb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GIa-QU-mxV"/>
@@ -101,10 +105,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-cW-BRu">
-                                <rect key="frame" x="8" y="20" width="359" height="580.5"/>
+                                <rect key="frame" x="8" y="20" width="359" height="582.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-iz-L4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="286.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="287.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-E2-OBH">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="78.5"/>
@@ -114,37 +118,39 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="rOm-r3-B0c">
-                                                <rect key="frame" x="0.0" y="78.5" width="359" height="208"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Hangmonkey Image" identifier="HangmonkeyImageView" label="Hangmonkey Image"/>
+                                                <rect key="frame" x="0.0" y="78.5" width="359" height="209"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Hangmonkey Image" identifier="HangmonkeyImageView" label="Empty Noose">
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cI1-be-CeZ">
-                                        <rect key="frame" x="0.0" y="294.5" width="359" height="286"/>
+                                        <rect key="frame" x="0.0" y="295.5" width="359" height="287"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Letter:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MLW-FR-VZt">
                                                 <rect key="frame" x="0.0" y="0.5" width="359" height="71.5"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Pick a Letter" identifier="PickLetterLabel" label="Pick a Letter Label"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Pick a Letter" identifier="PickLetterLabel" label="Pick a Letter"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="36"/>
                                                 <color key="textColor" red="0.60820132490000001" green="0.16673234109999999" blue="0.1069081947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abcdefghijklmnopqrstuvwxyz" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-9y-Q7u">
-                                                <rect key="frame" x="0.0" y="72" width="359" height="71.5"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Text Field to Guess Letter" identifier="GuessTextField" label="Guess Text Field"/>
+                                                <rect key="frame" x="0.0" y="72" width="359" height="72"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Text Field to Guess Letter" identifier="GuessTextField" label="Enter a Letter"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Guessed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-Pc-0l7">
-                                                <rect key="frame" x="0.0" y="143.5" width="359" height="71.5"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Already Guessed" identifier="AlreadyGuessedLabel" label="Already Guessed Label"/>
+                                                <rect key="frame" x="0.0" y="144" width="359" height="71.5"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Already Guessed" identifier="AlreadyGuessedLabel" label="Already Guessed"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                                 <color key="textColor" red="0.58006358150000004" green="0.32312870030000002" blue="0.10018900779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-Qb-eZe">
-                                                <rect key="frame" x="0.0" y="215" width="359" height="71.5"/>
+                                                <rect key="frame" x="0.0" y="215.5" width="359" height="72"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Guessed Letters" identifier="GuessedLettersLabel" label="Guessed Letters Label"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
                                                 <nil key="textColor"/>
@@ -156,10 +162,10 @@
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="451-Rt-E0g">
-                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="602.5" width="375" height="64.5"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.93666487070000004" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" hint="Choose a Letter Button" identifier="ChooseLetterButton" label="Choose Letter Button"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <accessibility key="accessibilityConfiguration" hint="Enter Your Letter" identifier="ChooseLetterButton" label="Enter Your Letter"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Choose">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -176,7 +182,7 @@
                             <constraint firstItem="Sw6-cW-BRu" firstAttribute="top" secondItem="UbP-rJ-mQE" secondAttribute="top" id="ath-In-3Eg"/>
                             <constraint firstItem="451-Rt-E0g" firstAttribute="leading" secondItem="UbP-rJ-mQE" secondAttribute="leading" id="rbO-rU-zkQ"/>
                             <constraint firstItem="UbP-rJ-mQE" firstAttribute="bottom" secondItem="451-Rt-E0g" secondAttribute="bottom" id="vGZ-Uw-74R"/>
-                            <constraint firstItem="451-Rt-E0g" firstAttribute="height" secondItem="MFl-wl-OVk" secondAttribute="height" multiplier="0.1" id="vHT-4t-JUE"/>
+                            <constraint firstItem="451-Rt-E0g" firstAttribute="height" secondItem="UbP-rJ-mQE" secondAttribute="height" multiplier="0.1" id="wU7-V3-cfE"/>
                             <constraint firstItem="Sw6-cW-BRu" firstAttribute="leading" secondItem="UbP-rJ-mQE" secondAttribute="leading" constant="8" id="wYi-um-9XE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UbP-rJ-mQE"/>

@@ -22,6 +22,7 @@
 		34A2002A1F6C393300BF4266 /* HangmonkeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A200291F6C393300BF4266 /* HangmonkeyUITests.swift */; };
 		34B07DC21F6AFF5800BD5B34 /* HangmonkeyTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B07DC11F6AFF5800BD5B34 /* HangmonkeyTextFieldDelegate.swift */; };
 		34B07DC41F6B250300BD5B34 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B07DC31F6B250300BD5B34 /* AnimationManager.swift */; };
+		34F0CC111F82D30600A5A9DF /* AccessibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0CC101F82D30600A5A9DF /* AccessibilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		34A2002B1F6C393300BF4266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B07DC11F6AFF5800BD5B34 /* HangmonkeyTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmonkeyTextFieldDelegate.swift; sourceTree = "<group>"; };
 		34B07DC31F6B250300BD5B34 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		34F0CC101F82D30600A5A9DF /* AccessibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				3422E9761F68677000520A5B /* Assets */,
 				34161A5A1E9A96E2007964E7 /* Info.plist */,
 				34B07DC31F6B250300BD5B34 /* AnimationManager.swift */,
+				34F0CC101F82D30600A5A9DF /* AccessibilityManager.swift */,
 			);
 			path = Hangmonkey;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				34161A6B1E9AF617007964E7 /* ExtensionGameViewController.swift in Sources */,
 				3422E9781F686DB000520A5B /* TextSpacing.swift in Sources */,
 				34B07DC21F6AFF5800BD5B34 /* HangmonkeyTextFieldDelegate.swift in Sources */,
+				34F0CC111F82D30600A5A9DF /* AccessibilityManager.swift in Sources */,
 				34B07DC41F6B250300BD5B34 /* AnimationManager.swift in Sources */,
 				34161A511E9A96E2007964E7 /* GameStateViewController.swift in Sources */,
 				34161A611E9AE22E007964E7 /* GameViewController.swift in Sources */,
